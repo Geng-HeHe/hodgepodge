@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleMigrationSettings" migrationVersion="1" />
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="testRunner" value="PLATFORM" />
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="gradleHome" value="$USER_HOME$/.gradle/daemon/gradle-4.6-all/gradle-4.6" />
+        <option name="gradleJvm" value="1.8 (2)" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/common/base" />
+            <option value="$PROJECT_DIR$/common/hrouter/annotation" />
+            <option value="$PROJECT_DIR$/common/hrouter/api" />
+            <option value="$PROJECT_DIR$/common/hrouter/compiler" />
+            <option value="$PROJECT_DIR$/helpcenter" />
+            <option value="$PROJECT_DIR$/tracking" />
+          </set>
+        </option>
+        <option name="resolveModulePerSourceSet" value="false" />
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>
