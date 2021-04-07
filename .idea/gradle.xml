@@ -17,6 +17,7 @@
             <option value="$PROJECT_DIR$/common/hrouter/annotation" />
             <option value="$PROJECT_DIR$/common/hrouter/api" />
             <option value="$PROJECT_DIR$/common/hrouter/compiler" />
+            <option value="$PROJECT_DIR$/common/javalib" />
             <option value="$PROJECT_DIR$/helpcenter" />
             <option value="$PROJECT_DIR$/tracking" />
           </set>

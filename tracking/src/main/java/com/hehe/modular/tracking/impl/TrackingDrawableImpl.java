@@ -13,6 +13,6 @@ public class TrackingDrawableImpl implements TrackingDrawable {
 
     @Override
     public int getDrawable() {
-        return R.drawable.ic_ac_unit_black_24dp;
+        return R.mipmap.hehe;
     }
 }

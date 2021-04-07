@@ -28,6 +28,6 @@ ext {
             // ${supportLibrary}表示引用一个变量
             "appcompat"      : "androidx.appcompat:appcompat:1.2.0",
             "constraint"     : "androidx.constraintlayout:constraintlayout:2.0.4",
-
+            "okhttp"         : "com.squareup.okhttp3:okhttp:3.10.0",
     ]
 }

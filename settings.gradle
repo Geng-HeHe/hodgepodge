@@ -1,3 +1,4 @@
+include ':javalib'
 include ':api'
 include ':compiler'
 include ':annotation'
@@ -7,6 +8,7 @@ include ':tracking'
 include ':app'
 rootProject.name = "hodgepodge"
 project(':base').projectDir = new File(settingsDir,'common/base')
+project(':javalib').projectDir = new File(settingsDir,'common/javalib')
 project(':api').projectDir = new File(settingsDir,'common/hrouter/api')
 project(':annotation').projectDir = new File(settingsDir,'common/hrouter/annotation')
 project(':compiler').projectDir = new File(settingsDir,'common/hrouter/compiler')

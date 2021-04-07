@@ -16,14 +16,36 @@ import com.hehe.hrouter.annotation.HRouter;
 public class HelpCenter_MainActivity extends BaseActivity {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.helpcenter_activity_main);
+    public void initActionBar() {
 
+    }
+
+    @Override
+    protected int getLayoutId() {
+        return R.layout.helpcenter_activity_main;
+    }
+
+    @Override
+    public void initView() {
         if (getIntent() != null) {
             String content = getIntent().getStringExtra("name");
             Log.e(Cons.TAG, "接收参数值：" + content);
         }
+    }
+
+    @Override
+    public void initListener() {
+
+    }
+
+    @Override
+    public void initData() {
+
+    }
+
+    @Override
+    protected void processClick(View v) {
+
     }
 
 

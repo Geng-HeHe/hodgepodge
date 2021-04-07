@@ -22,12 +22,33 @@ public class Tracking_MainActivity extends BaseActivity {
     String name;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.tracking_activity_main);
+    public void initActionBar() {
 
+    }
+
+    @Override
+    protected int getLayoutId() {
+        return R.layout.tracking_activity_main;
+    }
+
+    @Override
+    public void initView() {
         ParameterManager.getInstance().loadParameter(this);
         Log.e(Cons.TAG, "hehehehehehe   "+name);
+    }
+
+    @Override
+    public void initListener() {
+
+    }
+
+    @Override
+    public void initData() {
+
+    }
+
+    @Override
+    protected void processClick(View v) {
 
     }
 

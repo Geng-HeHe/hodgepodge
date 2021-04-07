@@ -20,6 +20,7 @@
     <bytecodeTargetLevel>
       <module name="annotation" target="1.7" />
       <module name="compiler" target="1.7" />
+      <module name="javalib" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>
