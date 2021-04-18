@@ -12,7 +12,13 @@ import android.widget.ImageView;
 import com.hehe.base.base.BaseActivity;
 import com.hehe.base.http.okhttp.Call;
 import com.hehe.base.http.okhttp.Response;
+import com.hehe.base.http.retrofit.HttpServiceCreator;
+import com.hehe.base.http.retrofit.bean.ResponseBean;
+import com.hehe.base.http.retrofit.common.AbstractObserver;
+import com.hehe.base.http.retrofit.livedata.ResourceLiveData;
 import com.hehe.base.tracking.drawable.TrackingDrawable;
+import com.hehe.hodgepodge.http.TestBean;
+import com.hehe.hodgepodge.http.webService;
 import com.hehe.hrouter.annotation.HRouter;
 import com.hehe.hrouter.annotation.Parameter;
 import com.hehe.hrouter.annotation.model.RouterBean;
@@ -77,6 +83,20 @@ public class MainActivity extends BaseActivity {
 
             }
         });
+
+        ResourceLiveData<TestBean> test = HttpServiceCreator.create(webService.class).test();
+        test.observe(this,new AbstractObserver<TestBean>(){
+                    @Override
+                    public void Success(TestBean data) {
+                        Log.d("hehe",data.data);
+                        //super.Success(data);
+                    }
+
+                    @Override
+                    public boolean Failed() {
+                        return super.Failed();
+                    }
+                });
 
 
 

@@ -27,7 +27,12 @@ ext {
     dependencies = [
             // ${supportLibrary}表示引用一个变量
             "appcompat"      : "androidx.appcompat:appcompat:1.2.0",
+            "annotation"      : "androidx.annotation:annotation:1.0.0",
             "constraint"     : "androidx.constraintlayout:constraintlayout:2.0.4",
             "okhttp"         : "com.squareup.okhttp3:okhttp:3.10.0",
+
+            "retrofit"         : "com.squareup.retrofit2:retrofit:2.9.0",
+            "converter-gson"   : "com.squareup.retrofit2:converter-gson:2.2.0",
+            "converter-protobuf" : "com.squareup.retrofit2:converter-protobuf:2.9.0",
     ]
 }

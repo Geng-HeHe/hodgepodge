@@ -1,10 +1,5 @@
 package com.hehe.base.http.okhttp;
 
-import com.hehe.base.custom_okhttp.okhttp.Call2;
-import com.hehe.base.custom_okhttp.okhttp.Dispatcher2;
-import com.hehe.base.custom_okhttp.okhttp.OkHttpClient2;
-import com.hehe.base.custom_okhttp.okhttp.RealCall2;
-import com.hehe.base.custom_okhttp.okhttp.Request2;
 
 public class OkHttpClient {
     Dispatcher dispatcher;

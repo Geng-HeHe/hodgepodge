@@ -1,6 +1,6 @@
 package com.hehe.javalib;
 
-import com.hehe.javalib.code.ArrayUtils;
+import com.hehe.javalib.code.Array.ReplaceSpace_5;
 import com.hehe.javalib.code.TwoStackToQueue;
 
 public class MyClass {
@@ -10,13 +10,15 @@ public class MyClass {
         boolean duplicate = ArrayUtils.duplicate(input, duplication);
         System.out.print("123 "+duplicate);*/
 
-        TwoStackToQueue<String> objectTwoStackToQueue = new TwoStackToQueue<>();
+/*        TwoStackToQueue<String> objectTwoStackToQueue = new TwoStackToQueue<>();
 
         objectTwoStackToQueue.Push("a");
         objectTwoStackToQueue.Push("b");
 
-        String pop = objectTwoStackToQueue.Pop();
-        System.out.print("hehe   "+pop);
+        String pop = objectTwoStackToQueue.Pop();*/
+
+
+        System.out.print("hehe   "+ ReplaceSpace_5.replaceSpace(new StringBuffer("we are")));
 
     }
 }

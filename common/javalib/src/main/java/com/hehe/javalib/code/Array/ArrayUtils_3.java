@@ -1,7 +1,7 @@
-package com.hehe.javalib.code;
+package com.hehe.javalib.code.Array;
 
 
-public class ArrayUtils {
+public class ArrayUtils_3 {
 
     /**
      * 在一个长度为 n 的数组里的所有数字都在 0 到 n-1 的范围内。
