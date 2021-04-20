@@ -1,4 +1,4 @@
-package com.hehe.javalib.code;
+package com.hehe.javalib.code.Stack;
 
 import java.util.Stack;
 
