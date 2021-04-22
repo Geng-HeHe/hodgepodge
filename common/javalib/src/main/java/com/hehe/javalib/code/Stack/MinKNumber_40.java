@@ -68,17 +68,21 @@ class MinKNumber_40 {
     private int QuickSort(int[] datas, int l, int h) {
         int p = datas[l];
         int i = l; int j = h;
-        while (true){
-            while (i != h && p>datas[++i]) ;
-            while (j != l && p<datas[--j]) ;
+        while (i != j){
+            while (i<j && p<datas[j]){
+              j--;
+            }
 
-            if (i>=j)
-                break;
-            //交换 i 与 j 的值
-            swap(datas,i,j);
+            while (i<j && p>datas[i]){
+                i++;
+            }
+
+            if (i<j){
+                swap(datas,i,j);
+            }
         }
-        swap(datas,l,j);
-        return j;
+        swap(datas,l,i);
+        return i;
     }
 
     private void swap(int[] datas, int i, int j) {
