@@ -1,5 +1,8 @@
 package com.hehe.javalib.code.Stack;
 
+import java.util.PriorityQueue;
+import java.util.logging.Level;
+
 public class median_41_1 {
     /**
      *
@@ -7,6 +10,28 @@ public class median_41_1 {
      * 那么中位数就是所有数值排序之后位于中间的数值。
      * 如果从数据流中读出偶数个数值，那么中位数就是所有数值排序之后中间两个数的平均值。
      */
+    private PriorityQueue<Integer> left = new PriorityQueue<>((o1, o2)-> o2-o1);//大顶堆
+    private PriorityQueue<Integer> right = new PriorityQueue<>();
+
+    public  void getPriorityData(int[] datas){
+        for (int i=0; i< datas.length ;i++){
+            if (i %2 == 0){
+
+                left.add(datas[i]);
+                right.add(left.poll());
+
+            }else {
+                right.add(datas[i]);
+                left.add(right.poll());
+            }
+        }
+    }
+    public Double GetMedian() {
+        if (N % 2 == 0)
+            return (left.peek() + right.peek()) / 2.0;
+        else
+            return (double) right.peek();
+    }
 
     public void getMedian(int[] data){
 

@@ -20,6 +20,10 @@ class MinKNumber_40 {
      * 可以在在初始化时使用 Lambda 表达式 (o1, o2) -> o2 - o1 来实现大顶堆。其它语言也有类似的堆数据结构。
      */
 
+
+
+
+
     public static List<Integer> getMinKNumber(int[] datas, int k){
         if (k> datas.length || k<=0){
             return new ArrayList<>();
