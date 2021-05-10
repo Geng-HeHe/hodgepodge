@@ -27,10 +27,11 @@ public class median_41_1 {
         }
     }
     public Double GetMedian() {
-        if (N % 2 == 0)
+      /*  if (N % 2 == 0)
             return (left.peek() + right.peek()) / 2.0;
         else
-            return (double) right.peek();
+            return (double) right.peek();*/
+      return 1.2;
     }
 
     public void getMedian(int[] data){

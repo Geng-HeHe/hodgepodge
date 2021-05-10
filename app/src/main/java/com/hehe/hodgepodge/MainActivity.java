@@ -17,6 +17,8 @@ import com.hehe.base.http.retrofit.bean.ResponseBean;
 import com.hehe.base.http.retrofit.common.AbstractObserver;
 import com.hehe.base.http.retrofit.livedata.ResourceLiveData;
 import com.hehe.base.tracking.drawable.TrackingDrawable;
+import com.hehe.hodgepodge.handler.Handler;
+import com.hehe.hodgepodge.handler.Message;
 import com.hehe.hodgepodge.http.TestBean;
 import com.hehe.hodgepodge.http.webService;
 import com.hehe.hrouter.annotation.HRouter;
@@ -40,6 +42,7 @@ public class MainActivity extends BaseActivity {
 
     @Parameter(name = "/tracking/getDrawable")
     TrackingDrawable trackingDrawable;
+    private Handler testHandler;
 
     @Override
     public void initActionBar() {
@@ -99,7 +102,29 @@ public class MainActivity extends BaseActivity {
                 });
 
 
+        testHandler = new Handler(){
+            @Override
+            public void handleMessage(Message msg) {
+                super.handleMessage(msg);
+            }
+        };
 
+
+    }
+
+    private void test() {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                // 常规的写法
+                Message message = new Message();
+                message.obj = "Net163";
+                message.what = 163;
+                testHandler.sendMessage(message);
+
+
+            }
+        }).start();
     }
 
     @Override

@@ -1,6 +1,7 @@
 package com.hehe.javalib.code.Pointer;
 
-import com.hehe.javalib.list.ArrayList;
+
+import java.util.ArrayList;
 
 /*
  *  @项目名：  hodgepodge
@@ -18,9 +19,9 @@ public class AddS_57_2 {
      * [18, 19, 20, 21, 22]。
      */
 
-    public ArrayList<Integer> getAddSArray(int[] data, int sum ){
+    public ArrayList<ArrayList<Integer>> getAddSArray(int[] data, int sum ){
 
-        ArrayList<Integer> ret = new ArrayList<>();
+        ArrayList<ArrayList<Integer>> ret = new ArrayList<>();
         int start = 1, end = 2;
         int curSum = 3;
         while (end<sum){

@@ -1,17 +1,8 @@
 package com.hehe.javalib.code.Pointer;
 
-import com.hehe.javalib.list.ArrayList;
-
+import java.util.ArrayList;
 import java.util.Arrays;
 
-/*
- *  @项目名：  hodgepodge
- *  @包名：    com.hehe.javalib.code.Pointer
- *  @文件名:   AddS_57_1
- *  @创建者:   Seven
- *  @创建时间:  2021/4/29 11:13
- *  @描述：    TODO
- */
 public class AddS_57_1 {
 
     /**
@@ -25,12 +16,11 @@ public class AddS_57_1 {
         while (left < right){
             if (data[left] + data[right] < s){
                 left++;
-
             }else if (data[left] + data[right] > s){
-
                 right--;
             }else {
                 return new ArrayList(Arrays.asList(data[left],data[right]));
+
             }
         }
         return new ArrayList<>();

@@ -24,7 +24,7 @@ public class SlidingWindow_59 {
      * 那么一共存在 6 个滑动窗口，他们的最大值分别为 {4, 4, 6, 6, 6, 5}。
      */
 
-    public ArrayList<Integer> getSlidingWindow(int[] data, int window){
+    public ArrayList<Integer> getSlidingWindow(int[] data, int size){
 
         ArrayList<Integer> arrayList = new ArrayList<Integer>();
 
@@ -34,7 +34,7 @@ public class SlidingWindow_59 {
             heap.add(data[i]);
 
         arrayList.add(heap.peek());
-        for (int i = 0, j = i+ Size; j<data.length; i++,j++){
+        for (int i = 0, j = i+ size; j<data.length; i++,j++){
             heap.remove(data[i]);
             heap.add(data[j]);
             arrayList.add(heap.peek());
