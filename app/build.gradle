@@ -45,7 +45,8 @@ dependencies {
     implementation project(':base')
     implementation project(':annotation') // 注解
     annotationProcessor project(':compiler') // 注解处理器
-
+    implementation 'com.github.bumptech.glide:glide:4.12.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0'
     // 如果是集成化模式，做发布版本时。各个模块都不能独立运行了
     if (isRelease) {
         implementation project(':tracking')

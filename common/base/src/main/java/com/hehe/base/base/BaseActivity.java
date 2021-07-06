@@ -18,6 +18,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.hehe.base.R;
 import com.hehe.base.utils.Cons;
 
+import org.greenrobot.eventbus.EventBus;
+
+import io.reactivex.rxjava3.core.Observable;
+import io.reactivex.rxjava3.core.ObservableEmitter;
+import io.reactivex.rxjava3.core.ObservableOnSubscribe;
+import io.reactivex.rxjava3.core.Observer;
+import io.reactivex.rxjava3.disposables.Disposable;
+
 
 /**
  * 项目父Activity
@@ -28,6 +36,7 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
         super.onCreate(savedInstanceState);
         // Utility.resetActivityTitle(this);
         setContentView(getLayoutId());
+        EventBus.getDefault().register(this);
 
         initView();
         initData();
@@ -35,7 +44,35 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
 
         initActionBar();
         regCommonBtn();
-        // EventBus.getDefault().register(this);
+
+        Observable.create(new ObservableOnSubscribe<String>() {
+            @Override
+            public void subscribe(ObservableEmitter<String> emitter) throws Exception {
+                emitter.onNext("1");
+                emitter.onNext("2");
+                emitter.onNext("3");
+                emitter.onComplete();
+            }
+        }).subscribe(new Observer<String>() {
+            @Override
+            public void onSubscribe(Disposable d) {
+                Log.d("", "onSubscribe");
+            }
+            @Override
+            public void onNext(String s) {
+                Log.d("", "onNext : " + s);
+            }
+            @Override
+            public void onError(Throwable e) {
+                Log.d("", "onError : " + e.toString());
+            }
+            @Override
+            public void onComplete() {
+                Log.d("", "onComplete");
+            }
+        });
+
+
 
     }
 
@@ -54,7 +91,7 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        // EventBus.getDefault().unregister(this);
+        EventBus.getDefault().unregister(this);
     }
     /**
      * actionbar

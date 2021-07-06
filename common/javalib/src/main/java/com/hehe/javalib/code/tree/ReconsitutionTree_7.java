@@ -3,7 +3,6 @@ package com.hehe.javalib.code.tree;
 
 import javax.swing.tree.TreeNode;
 
-import sun.reflect.generics.tree.Tree;
 
 public class ReconsitutionTree_7 {
     /**

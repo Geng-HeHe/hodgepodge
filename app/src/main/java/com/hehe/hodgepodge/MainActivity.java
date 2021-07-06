@@ -3,12 +3,22 @@ package com.hehe.hodgepodge;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.GlideBuilder;
+import com.bumptech.glide.annotation.GlideModule;
+import com.bumptech.glide.load.DecodeFormat;
+import com.bumptech.glide.load.engine.bitmap_recycle.LruBitmapPool;
+import com.bumptech.glide.load.engine.cache.InternalCacheDiskCacheFactory;
+import com.bumptech.glide.load.engine.cache.LruResourceCache;
+import com.bumptech.glide.module.AppGlideModule;
+import com.bumptech.glide.request.RequestOptions;
 import com.hehe.base.base.BaseActivity;
 import com.hehe.base.http.okhttp.Call;
 import com.hehe.base.http.okhttp.Response;
@@ -17,6 +27,7 @@ import com.hehe.base.http.retrofit.bean.ResponseBean;
 import com.hehe.base.http.retrofit.common.AbstractObserver;
 import com.hehe.base.http.retrofit.livedata.ResourceLiveData;
 import com.hehe.base.tracking.drawable.TrackingDrawable;
+import com.hehe.hodgepodge.glide.GlideApp;
 import com.hehe.hodgepodge.handler.Handler;
 import com.hehe.hodgepodge.handler.Message;
 import com.hehe.hodgepodge.http.TestBean;
@@ -65,12 +76,17 @@ public class MainActivity extends BaseActivity {
         int drawableId = trackingDrawable.getDrawable();
         ImageView img = findViewById(R.id.img);
         img.setImageResource(drawableId);
+        GlideApp.with(this).load("").into(img);
+
+
     }
+
+
 
     public void useOkHttp(){
         com.hehe.base.http.okhttp.OkHttpClient okHttpClient = new com.hehe.base.http.okhttp.OkHttpClient.Builder().build();
 
-        com.hehe.base.http.okhttp.Request request = new com.hehe.base.http.okhttp.Request.Builder().build();
+        com.hehe.base.http.okhttp.Request request = new com.hehe.base.http.okhttp.Request.Builder().url("https://demo/").get().build();
 
         com.hehe.base.http.okhttp.Call call = okHttpClient.newCall(request);
 
